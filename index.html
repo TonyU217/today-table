@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#f5efe6"><title>오늘의 식탁</title>
+<style>
+:root{--bg:#f5efe6;--card:#fffcf7;--ink:#352d27;--muted:#807568;--border:#e2d7c7;--brown:#68523f}*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}body{margin:0;background:var(--bg);color:var(--ink);font-family:'Apple SD Gothic Neo','Malgun Gothic','Noto Serif KR',serif;min-height:100dvh}button{font:inherit;cursor:pointer;touch-action:manipulation}.shell{max-width:960px;margin:0 auto;padding:24px 22px 70px}header{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);padding-bottom:18px}.brand{font-size:15px;letter-spacing:.12em}.brand b{font-weight:700}.edition{font-size:11px;color:var(--muted);letter-spacing:.12em}.eyebrow{font:11px Arial,sans-serif;letter-spacing:.2em;color:#8d765c}h1,h2,h3,p{margin-top:0}h1{font-size:clamp(32px,5vw,52px);line-height:1.32;font-weight:500;letter-spacing:-.07em;margin:13px 0}h2{font-weight:500;font-size:24px;letter-spacing:-.04em}.hero{padding:48px 0 27px}.lead{color:var(--muted);font-size:14px;line-height:1.85}.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin:0 0 31px}.tab{min-height:75px;background:#fbf7f0;border:1px solid var(--border);border-radius:7px;padding:12px;color:var(--brown)}.tab strong{display:block;font-size:19px;font-weight:500}.tab small{font-size:11px;color:var(--muted)}.tab.active{background:var(--brown);border-color:var(--brown);color:white}.tab.active small{color:#e4d7c7}.section-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}.date{font-size:12px;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.menu{display:block;text-align:left;padding:0;background:var(--card);border:1px solid var(--border);border-radius:9px;overflow:hidden;color:var(--ink);transition:transform .15s,box-shadow .15s}.menu:hover{transform:translateY(-2px);box-shadow:0 8px 20px #68523f14}.art{height:150px;background:#e8ddcd;display:grid;place-items:center;font-size:58px}.content{padding:18px}.number{font:10px Arial,sans-serif;letter-spacing:.16em;color:#907b63}.food-title{font-size:21px;margin:9px 0}.desc{font-size:13px;color:var(--muted);line-height:1.7;min-height:44px}.view{padding-top:12px;margin-top:16px;border-top:1px solid var(--border);display:flex;justify-content:space-between;font-size:12px;color:var(--brown)}.footer{margin-top:28px;padding-top:18px;border-top:1px solid var(--border);font-size:12px;color:var(--muted);line-height:1.8}#detail{display:none}.detail-top{display:flex;justify-content:space-between;align-items:center;margin:35px 0 20px}.back{background:transparent;border:1px solid var(--border);padding:12px 15px;border-radius:5px;color:var(--brown)}.detail-head{display:grid;grid-template-columns:1fr 1.25fr;gap:25px;align-items:center}.detail-art{border-radius:9px;min-height:240px;background:#e8ddcd;display:grid;place-items:center;font-size:95px}.detail-name{font-size:38px;font-weight:500;letter-spacing:-.05em;margin:12px 0}.detail-desc{color:var(--muted);font-size:14px;line-height:1.9}.tags{display:flex;gap:8px;flex-wrap:wrap}.tags span{font-size:12px;border:1px solid var(--border);padding:8px 10px}.recipe{display:grid;grid-template-columns:.8fr 1.2fr;gap:14px;margin-top:22px}.panel{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:23px}.panel h3{font-size:20px;font-weight:500;margin-bottom:17px}.ingredients{list-style:none;margin:0;padding:0}.ingredients li{padding:10px 0;border-bottom:1px solid #eee7db;font-size:14px}.ingredients li:before{content:'— ';color:#987b5d}.ingredients li:last-child{border:0}.steps{list-style:none;counter-reset:step;margin:0;padding:0}.steps li{counter-increment:step;position:relative;padding:0 0 16px 37px;font-size:14px;line-height:1.8}.steps li:before{content:counter(step, decimal-leading-zero);position:absolute;left:0;color:#987b5d;font:12px Arial,sans-serif;top:4px}.exit-wrap{display:flex;gap:16px;align-items:center;justify-content:space-between;margin-top:22px}.hint{font-size:12px;color:var(--muted);line-height:1.8}.exit{background:var(--brown);border:0;border-radius:5px;color:white;padding:14px 28px;min-height:47px}.hidden{display:none!important}
+@media(max-width:640px){.shell{padding:18px 13px calc(40px + env(safe-area-inset-bottom))}.edition{font-size:9px}.brand{font-size:12px}.hero{padding:36px 0 24px}.tabs{gap:7px;margin-bottom:25px}.tab{min-height:65px;padding:10px 4px}.tab strong{font-size:17px}.tab small{font-size:10px}.section-top{align-items:center}.section-top h2{font-size:21px}.date{font-size:10px;text-align:right}.grid{grid-template-columns:1fr;gap:10px}.menu{display:grid;grid-template-columns:102px minmax(0,1fr);min-height:133px}.art{height:100%;font-size:42px}.content{padding:13px}.food-title{font-size:18px;margin:7px 0}.desc{font-size:12px;min-height:0}.view{margin-top:9px;padding-top:8px}.detail-head,.recipe{grid-template-columns:1fr}.detail-art{min-height:170px;font-size:72px}.detail-name{font-size:32px}.detail-top{margin-top:24px}.panel{padding:20px}.back{min-height:44px}.exit{min-width:105px}}@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head><body><div class="shell"><header><div class="brand"><b>TABLE</b> · 오늘의 식탁</div><div class="edition">EVERYDAY, A NEW TABLE</div></header>
+<main id="home"><div class="hero"><div class="eyebrow">A LITTLE DAILY MENU</div><h1>오늘은 어떤 한 끼가<br>좋을까요?</h1><p class="lead">아침, 점심, 저녁 중 하나를 골라보세요.<br>메뉴는 매일 밤 12시에 바뀌고, 3일 동안 하나의 메뉴만 반복돼요.</p></div><nav class="tabs" aria-label="식사 시간 선택"><button class="tab active" data-meal="아침" aria-pressed="true"><strong>아침</strong><small>가볍고 든든하게</small></button><button class="tab" data-meal="점심" aria-pressed="false"><strong>점심</strong><small>기분 좋은 한 끼</small></button><button class="tab" data-meal="저녁" aria-pressed="false"><strong>저녁</strong><small>따뜻한 마무리</small></button></nav><section><div class="section-top"><h2 id="heading">아침 추천 메뉴</h2><div id="today" class="date"></div></div><div id="cards" class="grid"></div></section><div class="footer">모든 추천은 한국 표준시가 아닌 현재 기기의 현지 날짜를 기준으로 자정에 변경됩니다. 조리 중 뜨거운 기구를 조심하고, 알레르기 재료를 확인해 주세요.</div></main>
+<main id="detail"><div class="detail-top"><span class="eyebrow">TODAY'S RECIPE</span><button class="back" id="back">← 메뉴로 돌아가기</button></div><section class="detail-head"><div class="detail-art" id="emoji"></div><div><span class="eyebrow" id="category"></span><h2 class="detail-name" id="name"></h2><p class="detail-desc" id="description"></p><div class="tags"><span id="duration"></span><span>1인분 기준</span></div></div></section><section class="recipe"><div class="panel"><h3>준비할 재료</h3><ul id="ingredients" class="ingredients"></ul></div><div class="panel"><h3>만드는 순서</h3><ol id="steps" class="steps"></ol></div></section><div class="exit-wrap"><p class="hint">재료가 없다면 다른 메뉴를 골라보세요.</p><button class="exit" id="exit">나가기</button></div><div class="footer">재료의 양은 기호에 맞춰 조절할 수 있어요. 달걀·고기 등은 충분히 익혀 드세요.</div></main></div>
+<script>
+'use strict';
+const data={
+'아침':[
+['김밥','🍙','속을 꽉 채운 든든한 한 줄','25분',['밥 1공기','김 1장','달걀 1개','당근 조금','단무지 2줄','참기름과 소금 약간'],['밥에 참기름과 소금을 넣고 섞어요.','달걀은 부쳐 길게 자르고 당근은 채 썰어 볶아요.','김 위에 밥을 얇게 펴고 재료를 올려요.','단단히 말아 먹기 좋게 썰어요.']],
+['계란프라이','🍳','간단하고 고소한 아침 한 접시','5분',['달걀 2개','식용유 조금','소금 약간'],['팬에 기름을 두르고 중약불로 데워요.','달걀을 조심히 깨서 넣어요.','흰자와 노른자가 충분히 익도록 구워요.','소금을 살짝 뿌려 완성해요.']],
+['토스트','🍞','바삭한 빵과 부드러운 달걀','10분',['식빵 2장','달걀 1개','치즈 1장','버터 조금'],['식빵을 팬에 살짝 구워요.','달걀은 팬에서 충분히 익혀요.','빵 사이에 달걀과 치즈를 끼워요.','따뜻할 때 먹어요.']],
+['오트밀 죽','🥣','부드럽고 따뜻한 아침','10분',['오트밀 5큰술','우유 또는 물 200ml','바나나 반 개','꿀 조금(선택)'],['냄비에 오트밀과 우유 또는 물을 넣어요.','약불에서 저으며 5분가량 끓여요.','바나나를 썰어 올려요.','원하면 꿀을 조금 곁들여요.']],
+['주먹밥','🍙','한입에 쏙, 간편한 밥','12분',['밥 1공기','김가루 2큰술','참기름 1작은술','깨 약간','소금 약간'],['따뜻한 밥에 김가루를 넣어요.','참기름과 깨, 소금도 넣고 섞어요.','손을 깨끗이 씻고 한입 크기로 뭉쳐요.','접시에 가지런히 담아요.']],
+['계란말이','🍳','폭신하게 돌돌 말아 만든 반찬','12분',['달걀 2개','당근 조금','대파 조금','식용유 약간','소금 약간'],['달걀을 풀고 잘게 썬 채소와 소금을 넣어요.','팬에 기름을 얇게 둘러요.','달걀물을 나눠 부으며 천천히 말아요.','속까지 익힌 뒤 썰어요.']],
+['바나나 요거트볼','🍌','상큼하고 손쉬운 아침','5분',['플레인 요거트 150g','바나나 1개','시리얼 3큰술','견과류 약간(선택)'],['바나나를 먹기 좋게 썰어요.','그릇에 요거트를 담아요.','바나나와 시리얼을 올려요.','원하면 견과류를 곁들여요.']]
+],
+'점심':[
+['비빔밥','🥗','채소가 어우러진 한 그릇','20분',['밥 1공기','시금치 한 줌','당근 조금','콩나물 한 줌','달걀 1개','고추장 1큰술','참기름 약간'],['채소를 씻고 손질해요.','시금치와 콩나물은 데치고 당근은 볶아요.','달걀은 충분히 익혀요.','밥 위에 모두 담고 양념과 함께 비벼요.']],
+['참치마요덮밥','🍚','고소하고 간편한 밥 한 그릇','10분',['밥 1공기','참치 통조림 1개','마요네즈 1큰술','간장 1작은술','김가루 약간'],['참치의 기름이나 물을 빼요.','참치와 마요네즈를 섞어요.','밥 위에 참치마요를 올려요.','간장과 김가루를 곁들여요.']],
+['볶음밥','🍳','냉장고 채소를 활용한 한 끼','15분',['밥 1공기','양파 1/4개','당근 조금','달걀 1개','식용유 조금','간장 약간'],['채소를 잘게 썰어요.','팬에 채소를 볶아요.','달걀을 넣어 완전히 익혀요.','밥과 간장을 넣고 골고루 볶아요.']],
+['잔치국수','🍜','따뜻한 국물의 부드러운 국수','20분',['소면 1인분','멸치육수 500ml','애호박 조금','달걀 1개','국간장 약간'],['소면을 포장지 안내에 따라 삶아 헹궈요.','애호박을 썰어 육수에 익혀요.','달걀을 익혀 가늘게 썰어요.','그릇에 면과 고명을 담고 뜨거운 국물을 부어요.']],
+['김치볶음밥','🍚','감칠맛 나는 익숙한 메뉴','15분',['밥 1공기','김치 반 컵','양파 조금','식용유 조금','참기름 약간'],['김치와 양파를 작게 썰어요.','팬에 식용유를 두르고 재료를 볶아요.','밥을 넣어 골고루 볶아요.','불을 끄고 참기름을 살짝 넣어요.']],
+['유부초밥','🍣','새콤달콤한 한입 밥','15분',['밥 1공기','유부초밥용 유부 6장','식초 1작은술','설탕 반 작은술','깨 약간'],['밥에 식초와 설탕, 깨를 넣고 섞어요.','유부의 양념물을 가볍게 짜요.','유부 안에 밥을 적당히 채워요.','접시에 담아 완성해요.']],
+['감자수프','🥣','부드럽고 포근한 수프','25분',['감자 1개','양파 1/4개','우유 200ml','물 100ml','버터 조금','소금 약간'],['감자와 양파를 작게 썰어요.','냄비에 버터를 녹여 채소를 볶아요.','물을 넣고 감자가 부드러워질 때까지 끓여요.','우유를 넣고 으깨며 더 끓인 뒤 간을 맞춰요.']]
+],
+'저녁':[
+['된장찌개','🍲','구수한 국물이 있는 저녁','20분',['된장 1~2큰술','두부 1/3모','애호박 조금','양파 1/4개','물 2컵'],['두부와 채소를 작게 썰어요.','물을 끓이고 된장을 풀어요.','애호박과 양파를 먼저 넣고 끓여요.','두부를 넣고 5분 정도 더 끓여요.']],
+['불고기 덮밥','🥘','달콤짭짤한 고기와 밥','25분',['소고기 150g','밥 1공기','양파 1/4개','간장 1큰술','설탕 1작은술','물 2큰술'],['고기에 간장, 설탕, 물을 넣고 섞어요.','양파를 얇게 썰어요.','팬에 고기와 양파를 넣고 속까지 익혀요.','밥 위에 올려 완성해요.']],
+['카레라이스','🍛','부드러운 카레와 따뜻한 밥','25분',['밥 1공기','카레 블록 1~2조각','감자 1개','당근 조금','양파 반 개','물 300ml'],['채소를 한입 크기로 썰어요.','냄비에 채소를 볶다가 물을 부어요.','채소가 익으면 불을 약하게 줄여요.','카레를 녹여 걸쭉하게 끓인 뒤 밥과 먹어요.']],
+['두부조림','🍽️','짭조름한 양념이 밴 두부','18분',['두부 반 모','간장 1큰술','물 3큰술','설탕 반 작은술','대파 조금','식용유 약간'],['두부를 도톰하게 썰어요.','팬에 기름을 두르고 두부를 앞뒤로 구워요.','간장, 물, 설탕과 썬 파를 넣어요.','약불에서 양념이 배도록 조려요.']],
+['닭고기 채소볶음','🍗','채소와 닭고기를 곁들인 한 접시','20분',['닭고기 150g','양파 1/4개','파프리카 반 개','간장 1큰술','식용유 조금'],['닭고기를 먹기 좋게 썰어요.','양파와 파프리카도 썰어요.','팬에 닭고기를 넣고 속까지 충분히 익혀요.','채소와 간장을 넣고 함께 볶아요.']],
+['계란국','🥣','속이 편안한 따뜻한 국','12분',['달걀 2개','물 500ml','대파 조금','국간장 1작은술','소금 약간'],['냄비에 물을 끓여요.','국간장으로 간을 맞춰요.','풀어둔 달걀을 천천히 부어요.','완전히 익으면 송송 썬 대파를 넣어요.']],
+['버섯리소토','🍚','크리미하고 부드러운 쌀 요리','20분',['밥 1공기','버섯 한 줌','우유 150ml','양파 조금','치즈 1장','소금 약간'],['양파와 버섯을 잘게 썰어요.','팬에 채소를 볶아요.','밥과 우유를 넣고 저어가며 끓여요.','치즈를 녹이고 소금으로 간해요.']]
+]};
+// 기존 21개 레시피 데이터는 수정하지 않고, 사용하기 편한 이름 기반 구조로 변환합니다.
+const catalog = Object.fromEntries(Object.entries(data).map(([mealType, entries]) => [
+  mealType,
+  entries.map(([name, emoji, description, duration, ingredients, steps]) => ({
+    name, emoji, description, duration, ingredients, steps
+  }))
+]));
+const MEALS = ['아침', '점심', '저녁'];
+const CYCLE_DAYS = 3;
+const home = document.getElementById('home');
+const detail = document.getElementById('detail');
+const cards = document.getElementById('cards');
+const nameHeading = document.getElementById('name');
+let meal = '아침';
+let lastDay = null;
+
+// 사이트에 적힌 안내대로 기기의 '현지 날짜'를 사용합니다. UTC 시각을 그대로 쓰지 않습니다.
+function localCalendar(now = new Date()) {
+  const year = now.getFullYear();
+  const month = now.getMonth();
+  const date = now.getDate();
+  return {
+    day: Math.floor(Date.UTC(year, month, date) / 86400000),
+    label: `${year}. ${String(month + 1).padStart(2, '0')}. ${String(date).padStart(2, '0')} · 오늘의 추천`
+  };
+}
+function mod(n, divisor) {
+  return ((n % divisor) + divisor) % divisor;
+}
+function rnd(seed) {
+  let x = seed >>> 0;
+  return () => ((x = (Math.imul(x, 1664525) + 1013904223) >>> 0) / 4294967296);
+}
+function shuffle(items, seed) {
+  const result = [...items];
+  const random = rnd(seed);
+  for (let i = result.length - 1; i > 0; i--) {
+    const j = Math.floor(random() * (i + 1));
+    [result[i], result[j]] = [result[j], result[i]];
+  }
+  return result;
+}
+
+// 3일간 유지되는 메뉴를 정하되 이웃한 주기들의 공통 메뉴가 겹치지 않게 합니다.
+function sharedIndex(cycle, count) {
+  return mod(cycle * 2 + Math.floor(cycle / count), count);
+}
+
+// 해당 주기의 마지막 날에 사용할 두 메뉴. 이전 주기 공통 메뉴를 포함하고,
+// 다음 주기 공통 메뉴를 제외해 주기 경계의 중복을 피합니다.
+function lastPair(foods, cycle, mealIndex) {
+  const count = foods.length;
+  const shared = foods[sharedIndex(cycle, count)];
+  const previousShared = foods[sharedIndex(cycle - 1, count)];
+  const nextShared = foods[sharedIndex(cycle + 1, count)];
+  const candidates = foods.filter(food => food !== shared && food !== previousShared && food !== nextShared);
+  const extra = shuffle(candidates, (cycle * 33013 + mealIndex * 1009 + 139) >>> 0)[0];
+  return shuffle([previousShared, extra], (cycle * 1013 + mealIndex * 293 + 71) >>> 0);
+}
+
+// 같은 3일 주기: 공통 메뉴 1개 + 매일 새로운 메뉴 2개.
+// 다른 주기 사이: 전날의 3개 메뉴가 다음 날 바로 중복되지 않게 구성합니다.
+function recommendations(mealType, day = localCalendar().day) {
+  const foods = catalog[mealType];
+  if (!foods || foods.length < 7) {
+    throw new Error('각 식사 종류에는 최소 7개의 메뉴가 필요합니다.');
+  }
+  const mealIndex = MEALS.indexOf(mealType);
+  const cycle = Math.floor(day / CYCLE_DAYS);
+  const offset = mod(day, CYCLE_DAYS);
+  const common = foods[sharedIndex(cycle, foods.length)];
+  const finalPair = lastPair(foods, cycle, mealIndex);
+  const previousCommon = foods[sharedIndex(cycle - 1, foods.length)];
+  const previousFinalPair = lastPair(foods, cycle - 1, mealIndex);
+
+  const firstCandidates = foods.filter(food =>
+    food !== common && food !== previousCommon &&
+    !finalPair.includes(food) && !previousFinalPair.includes(food)
+  );
+  const firstPair = shuffle(firstCandidates, (cycle * 7103 + mealIndex * 577 + 13) >>> 0).slice(0, 2);
+  const middlePair = shuffle(foods.filter(food =>
+    food !== common && !firstPair.includes(food) && !finalPair.includes(food)
+  ), (cycle * 4507 + mealIndex * 131 + 37) >>> 0).slice(0, 2);
+
+  const pair = [firstPair, middlePair, finalPair][offset];
+  return shuffle([common, ...pair], (day * 7117 + mealIndex * 293) >>> 0);
+}
+
+// HTML 문자열을 조합하지 않고 텍스트 노드로 만들므로 추후 데이터 교체도 안전합니다.
+function element(tag, className, value) {
+  const node = document.createElement(tag);
+  if (className) node.className = className;
+  if (value !== undefined) node.textContent = value;
+  return node;
+}
+function createCard(food, index) {
+  const button = element('button', 'menu');
+  button.type = 'button';
+  const art = element('div', 'art', food.emoji);
+  art.setAttribute('aria-hidden', 'true');
+  const content = element('div', 'content');
+  content.append(
+    element('div', 'number', `TODAY'S PICK 0${index + 1}`),
+    element('div', 'food-title', food.name),
+    element('div', 'desc', food.description)
+  );
+  const view = element('div', 'view');
+  view.append(element('span', '', '재료와 레시피 보기'), element('span', '', '↗'));
+  content.append(view);
+  button.append(art, content);
+  button.addEventListener('click', () => openFood(food));
+  return button;
+}
+function render() {
+  const calendar = localCalendar();
+  lastDay = calendar.day;
+  document.getElementById('heading').textContent = `${meal} 추천 메뉴`;
+  document.getElementById('today').textContent = calendar.label;
+  document.querySelectorAll('.tab').forEach(button => {
+    const selected = button.dataset.meal === meal;
+    button.classList.toggle('active', selected);
+    button.setAttribute('aria-pressed', String(selected));
+  });
+  cards.replaceChildren(...recommendations(meal, calendar.day).map(createCard));
+}
+function openFood(food) {
+  document.getElementById('emoji').textContent = food.emoji;
+  document.getElementById('category').textContent = `${meal} MENU`;
+  nameHeading.textContent = food.name;
+  document.getElementById('description').textContent = food.description;
+  document.getElementById('duration').textContent = `조리 시간 ${food.duration}`;
+  const ingredients = document.getElementById('ingredients');
+  const steps = document.getElementById('steps');
+  ingredients.replaceChildren(...food.ingredients.map(item => element('li', '', item)));
+  steps.replaceChildren(...food.steps.map(item => element('li', '', item)));
+  home.style.display = 'none';
+  detail.style.display = 'block';
+  window.scrollTo(0, 0);
+  // 키보드 및 스크린 리더가 새 화면의 제목부터 읽도록 합니다.
+  nameHeading.tabIndex = -1;
+  nameHeading.focus({ preventScroll: true });
+}
+function back() {
+  detail.style.display = 'none';
+  home.style.display = 'block';
+  render();
+  window.scrollTo(0, 0);
+  // 닫힌 상세 화면에 포커스가 남아있지 않도록 메뉴 탭으로 돌려줍니다.
+  document.querySelector('.tab.active').focus({ preventScroll: true });
+}
+function refreshOnLocalDateChange() {
+  if (localCalendar().day !== lastDay) {
+    // 상세 레시피를 읽는 중이라면 방해하지 않고, 숨겨진 홈 추천만 갱신합니다.
+    render();
+  }
+}
+document.querySelectorAll('.tab').forEach(button => button.addEventListener('click', () => {
+  meal = button.dataset.meal;
+  render();
+}));
+document.getElementById('back').addEventListener('click', back);
+document.getElementById('exit').addEventListener('click', back);
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && detail.style.display === 'block') {
+    event.preventDefault();
+    back();
+  }
+});
+// 절전/백그라운드 탭에서는 타이머가 멈출 수 있으므로 다시 활성화될 때 확인합니다.
+document.addEventListener('visibilitychange', () => {
+  if (!document.hidden) refreshOnLocalDateChange();
+});
+window.addEventListener('focus', refreshOnLocalDateChange);
+window.addEventListener('pageshow', refreshOnLocalDateChange);
+render();
+setInterval(refreshOnLocalDateChange, 10000);
+</script></body></html>
